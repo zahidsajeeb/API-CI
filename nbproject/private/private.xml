@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/xampp/htdocs/code/application/views/admin/token_view.php</file>
+            <file>file:/C:/xampp/htdocs/code/application/views/admin/admin_home.php</file>
+            <file>file:/C:/xampp/htdocs/code/application/views/home.php</file>
+            <file>file:/C:/xampp/htdocs/code/application/models/Login_model.php</file>
+            <file>file:/C:/xampp/htdocs/code/application/models/Report_model.php</file>
+            <file>file:/C:/xampp/htdocs/code/application/controllers/Token.php</file>
+            <file>file:/C:/xampp/htdocs/code/application/views/admin/menu.php</file>
+            <file>file:/C:/xampp/htdocs/code/application/views/report_view.php</file>
+            <file>file:/C:/xampp/htdocs/code/application/views/admin/report_view.php</file>
+            <file>file:/C:/xampp/htdocs/code/application/controllers/Login.php</file>
+            <file>file:/C:/xampp/htdocs/code/application/views/admin/report_page.php</file>
+            <file>file:/C:/xampp/htdocs/code/application/controllers/Report.php</file>
+            <file>file:/C:/xampp/htdocs/code/application/models/Token_model.php</file>
+        </group>
+    </open-files>
+</project-private>
