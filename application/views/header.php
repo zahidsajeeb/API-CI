@@ -20,6 +20,7 @@
             /*position: fixed;*/
             top: 0;
             width: 100%;
+            border-radius: 0;
         }
 
         .navbar a {
@@ -40,7 +41,8 @@
         .main {
             padding: 16px;
             margin-top: 30px;
-            height: 1500px; /* Used in this example to enable scrolling */
+            height: 100%; /* Used in this example to enable scrolling */
+            width: 100%;
         }
 
         .footer {

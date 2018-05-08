@@ -13,10 +13,10 @@
         };
         ?>
 
+        <div class="container">
         <div class="main">
             <div class="container">
                 <div class="row">
-
                     <div class="col-md-12 well">
                         <h4 style="text-align:center; font-weight:bold;"> Token View</h4>
                         <table class="table table-bordered" id="myTable">
@@ -45,6 +45,7 @@
                 </div>
 
             </div>
+        </div>
         </div>
 
         <?php

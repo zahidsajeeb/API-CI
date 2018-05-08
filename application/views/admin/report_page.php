@@ -6,6 +6,7 @@
 
         <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css">
         <link rel="stylesheet" type="text/css" media="screen" href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
+        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -18,6 +19,7 @@
                 position: fixed;
                 top: 0;
                 width: 100%;
+                border-radius: 0;
             }
 
             .navbar a {
@@ -38,7 +40,7 @@
             .main {
                 padding: 16px;
                 margin-top: 30px;
-                height: 1500px; /* Used in this example to enable scrolling */
+                height: 100%; /* Used in this example to enable scrolling */
             }
 
             .footer {
@@ -61,27 +63,27 @@
         };
         ?>
 
+        <div class="container">
         <div class="main">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-8">
-                        <h2>Report Page</h2>
-                        <form class="form-horizontal" action="<?php echo base_url(); ?>Report/admin_generate_report" method="POST">
-
+                    <!--<div class="col-md-2"></div>-->
+                    <div class="col-md-12">
+                        <h3 style="text-align:center; font-weight:bold;">Report Page</h3>
+                        <form class="form-control" action="<?php echo base_url(); ?>Report/admin_generate_report" method="POST">
                             <div class="form-group">
-                                <label class="control-label col-sm-4" for="email">User ID: &nbsp;&nbsp;</label> 
-                                <div class="col-sm-8">          
-                                    <input type="text" class="form-control" id="pwd" placeholder="User ID" name="user_id" required="">
+                                <label  style="font-weight:bold;" class="control-label" for="email">User ID: &nbsp;&nbsp;</label> 
+                                <div class="col-sm-12">          
+                                    <input style="width:50%;" type="text" class="form-control" id="pwd" placeholder="User ID" name="user_id" required="" autocomplete="off">
                                 </div>
                             </div>
                             <br>
 
                             <div class="form-group">
-                                <label class="control-label col-sm-4" for="email">Date Time: &nbsp;&nbsp;</label> 
-                                <div class="col-sm-8">
+                                <label  style="font-weight:bold;" class="control-label" for="email">Date Time: &nbsp;&nbsp;</label> 
+                                <div class="col-sm-12">
                                     <div id="datetimepicker" class="input-append date">
-                                        <input type="text" required="" class="form-control" name="date" placeholder="Enter Date Time"></input>
+                                        <input style="width:50%;" type="text" required="" class="form-control" name="date" placeholder="Enter Date Time" autocomplete="off"></input>
                                         <span class="add-on">
                                             <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
                                         </span>
@@ -91,11 +93,12 @@
                             <br>
 
                             <div class="form-group">
-                                <label class="control-label col-sm-4" for="pwd">Sender/Receiver Email: &nbsp;&nbsp;</label>
-                                <div class="col-sm-8">          
-                                    <input type="text" class="form-control" id="pwd" placeholder="Sender/Receiver Email" name="email" required="">
+                                <label style="font-weight:bold;" class="control-label" for="pwd">Sender/Receiver Email: &nbsp;&nbsp;</label>
+                                <div class="col-sm-12">          
+                                    <input style="width:50%;" type="email" class="form-control" id="pwd" placeholder="Sender/Receiver Email" name="email" required="" autocomplete="off">
                                 </div>
                             </div>
+                            <br>
 
                             <div class="form-group">
                                 <div class="col-md-12"> 
@@ -104,9 +107,10 @@
                             </div>
                         </form>
                     </div>
-                    <div class="col-md-2"></div>
+                    <!--<div class="col-md-2"></div>-->
                 </div>
             </div>
+        </div>
         </div>
 
         <?php

@@ -57,10 +57,27 @@ class Send_email extends CI_Controller {
                 $auth_key = $v;
             }
         }
-
 //         print_r($this->input->request_headers['auth_key']);
 //         exit();
         $this->load->helper(array('form', 'url'));
+        $this->load->library('form_validation');
+
+        $this->form_validation->set_rules('sender_email', 'Sender Email', 'required');
+        $this->form_validation->set_rules('receiver_email', 'Receiver Email', 'required');
+        $this->form_validation->set_rules('subject', 'Subject', 'required');
+        $this->form_validation->set_rules('body', 'Body', 'required');
+        $this->form_validation->set_rules('user_id', 'User ID', 'required');
+
+        if ($this->form_validation->run() == FALSE) {
+
+            $this->output->set_output(json_encode(array('result' => 0, 'error' => $this->form_validation->error_array())));
+            return false;
+        }
+
+
+
+
+
         $sender_email = $data['sender_email'] = $this->input->post('sender_email');
         $receiver_email = $data['receiver_email'] = $this->input->post('receiver_email');
         $subject = $data['subject'] = $this->input->post('subject');
@@ -69,7 +86,7 @@ class Send_email extends CI_Controller {
         $auth_key = $data['auth_key'] = $auth_key;
 
         if ($auth_key == $authenticationKey && $data['receiver_email'] != Null && $data['subject'] != Null && $data['body'] != Null) {
-            $this->Email_model->insert_data($data);
+//            $this->Email_model->insert_data($data);
             $mail = new PHPMailer(true);
             try {
                 $mail = new PHPMailer();
@@ -116,6 +133,7 @@ class Send_email extends CI_Controller {
                 //echo 'Message has been sent';
 
                 if ($mail->Send()) {
+                    $this->Email_model->insert_data($data);
 //                  $result = ['res' => ['response' => 'success'], 'msg' => ["message" => $this->db->insert_id()]];
                     $result = array(array("response" => 'success'), array("message" => $this->db->insert_id()));
                 } else {

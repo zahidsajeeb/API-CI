@@ -13,6 +13,7 @@
         };
         ?>
 
+        <div class="container">
         <div class="main">
             <div class="container">
                 <h2> Admin Dashboard</h2>
@@ -22,7 +23,7 @@
 
             </div>
         </div>
-        
+        </div>
         <?php
         if (isset($footer)) {
             echo $footer;

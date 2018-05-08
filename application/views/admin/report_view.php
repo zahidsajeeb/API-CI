@@ -14,6 +14,7 @@
         };
         ?>
 
+        <div class="container">
         <div class="main">
             <div class="container">
                 <div class="row">
@@ -62,6 +63,7 @@
                 </div>
 
             </div>
+        </div>
         </div>
         <?php
         if (isset($footer)) {

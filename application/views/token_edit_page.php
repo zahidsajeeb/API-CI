@@ -12,12 +12,14 @@
             echo $menu;
         };
         ?>
+        
+        <div class="container">
         <div class="main">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-8">
-                        <h2>Edit Token</h2>
+                    <!--<div class="col-md-2"></div>-->
+                    <div class="col-md-12">
+                        <h3 style="text-align:center; font-weight:bold;"> Edit Token</h3>
                         <form action="<?php echo base_url(); ?>Token/update" method="POST">
 
                             <div class="form-group">
@@ -35,10 +37,11 @@
                             <button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> Submit</button>
                         </form>
                     </div>
-                    <div class="col-md-2"></div>
+                    <!--<div class="col-md-2"></div>-->
                 </div>
 
             </div>
+        </div>
         </div>
 
         <?php
