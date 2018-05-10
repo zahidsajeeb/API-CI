@@ -25,12 +25,13 @@ class Login extends CI_Controller {
         if ($result->status ==2)
             {
             $sessiondata = array();
-            $sessiondata['user_id'] = $result->user_id;
-            $sessiondata['is_login'] = TRUE;
+            $sessiondata['user_id']   = $result->user_id;
+            $sessiondata['username']  = $result->username;
+            $sessiondata['is_login']  = TRUE;
             $this->session->set_userdata($sessiondata);
             
             $data['header']=$this->load->view('header','',true);
-            $data['menu']=$this->load->view('menu','',true);
+            $data['menu']  =$this->load->view('menu','',true);
             $data['footer']=$this->load->view('footer','',true);
             
             $this->load->view('home',$data);

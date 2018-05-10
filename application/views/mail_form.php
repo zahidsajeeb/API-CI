@@ -26,7 +26,8 @@
                                 <input type="email" class="form-control"  id="email" placeholder="Enter Receiver Email" name="sender_email">      
                                 <span class="error_msg" style="color:red;"></span><br>
 
-                                <input type="hidden"  name="user_id" value="<?php echo $this->session->userdata('user_id'); ?>">
+                                <input type="hidden"  name="user_id" value="<?php   echo $this->session->userdata('user_id'); ?>">
+                                <input type="hidden"  name="username" value="<?php  echo $this->session->userdata('username'); ?>">
                             </div>
 
                             <div class="form-group">

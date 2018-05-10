@@ -20,7 +20,7 @@
                 <p>
                     Your User Id is:  <?php echo $this->session->userdata('user_id') ?>
                 </p>
-
+               
             </div>
         </div>
         </div>

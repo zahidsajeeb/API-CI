@@ -74,16 +74,13 @@ class Send_email extends CI_Controller {
             return false;
         }
 
-
-
-
-
-        $sender_email = $data['sender_email'] = $this->input->post('sender_email');
-        $receiver_email = $data['receiver_email'] = $this->input->post('receiver_email');
-        $subject = $data['subject'] = $this->input->post('subject');
-        $body = $data['body'] = $this->input->post('body');
-        $user_id = $data['user_id'] = $this->input->post('user_id');
-        $auth_key = $data['auth_key'] = $auth_key;
+        $sender_email      = $data['sender_email'] = $this->input->post('sender_email');
+        $receiver_email    = $data['receiver_email'] = $this->input->post('receiver_email');
+        $subject           = $data['subject'] = $this->input->post('subject');
+        $body              = $data['body'] = $this->input->post('body');
+        $user_id           = $data['user_id']   = $this->input->post('user_id');
+        $user_name         = $data['username'] = $this->input->post('username');
+        $auth_key          = $data['auth_key'] = $auth_key;
 
         if ($auth_key == $authenticationKey && $data['receiver_email'] != Null && $data['subject'] != Null && $data['body'] != Null) {
 //            $this->Email_model->insert_data($data);
@@ -114,7 +111,8 @@ class Send_email extends CI_Controller {
 //        --------------------- Samad Bhai Code Stop -----------------------------------
 
                 $mail->SMTPDebug = 0;                                 // Enable verbose debug output
-                $mail->isSMTP();                                     // Set mailer to use SMTP   
+                //$mail->Debugoutput = function($str, $level) {echo "debug level $level; message: $str";};
+                $mail->isSMTP();                                      // Set mailer to use SMTP   
                 $mail->Host = 'smtp.gmail.com';                       // Specify main and backup SMTP servers
                 $mail->SMTPAuth = true;                               // Enable SMTP authentication
                 $mail->Username = 'phpexpart007@gmail.com';           // SMTP username
@@ -132,15 +130,19 @@ class Send_email extends CI_Controller {
                 //$mail->send();
                 //echo 'Message has been sent';
 
-                if ($mail->Send()) {
-                    $this->Email_model->insert_data($data);
-//                  $result = ['res' => ['response' => 'success'], 'msg' => ["message" => $this->db->insert_id()]];
-                    $result = array(array("response" => 'success'), array("message" => $this->db->insert_id()));
-                } else {
+                if ($mail->Send()){
+//                    $status=$mail->Debugoutput = function($str, $level) {echo "debug level $level; message: $str";};
+                      $this->Email_model->insert_data($receiver_email,$sender_email,$subject,$body,$auth_key,$user_id,$user_name);
+//                    $result = ['res' => ['response' => 'success'], 'msg' => ["message" => $this->db->insert_id()]];
+                      $result = array(array("response" => 'success'), array("message" => $this->db->insert_id()));
+                      
+                }
+                else {
                     $result = array('response' => 'error', 'error_message' => $mail->ErrorInfo);
                 }
                 echo json_encode($result);
-            } catch (Exception $e) {
+            } 
+            catch (Exception $e) {
                 echo 'Message could not be sent. Mailer Error:', $mail->ErrorInfo;
             }
         } else {

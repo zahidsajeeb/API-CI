@@ -6,7 +6,7 @@
 
         <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css">
         <link rel="stylesheet" type="text/css" media="screen" href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
-        
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -64,45 +64,59 @@
         ?>
 
         <div class="container">
-        <div class="main">
-            <div class="container">
-                <div class="row">
-                    <!--<div class="col-md-2"></div>-->
-                    <div class="col-md-12">
-                        <h3 style="text-align:center; font-weight:bold;">Report Page</h3>
-                        <form class="form-control" action="<?php echo base_url(); ?>Report/generate_report" method="POST">
-                            <div class="form-group">
-                                <label  style="font-weight:bold;" class="control-label" for="email">Date Time: &nbsp;&nbsp;</label> 
-                                <div class="col-sm-12">
-                                    <div id="datetimepicker" class="input-append date">
-                                        <input style="width:50%;" type="text" required="" class="form-control" name="date" placeholder="Enter Date Time" autocomplete="off"></input>
-                                        <span class="add-on">
-                                            <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
-                                        </span>
+            <div class="main">
+                <div class="container">
+                    <div class="row">
+                        <!--<div class="col-md-2"></div>-->
+                        <div class="col-md-12">
+                            <h3 style="text-align:center; font-weight:bold;">Report Page</h3>
+                            <form class="form-control well" action="<?php echo base_url(); ?>Report/generate_report" method="POST">
+                                <div class="form-group">
+                                    <label  style="font-weight:bold; margin-left:25%;" class="control-label" for="email">Starting Date Time: &nbsp;&nbsp;</label> 
+                                    <div class="col-sm-12">
+                                        <div id="datetimepicker" class="input-append date">
+                                            <input style="width:50%; margin-left:25%;" type="text" class="form-control" name="date1" placeholder="Starting Date Time"></input>
+                                            <span class="add-on">
+                                                <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <br>
+                                <br>
 
-                            <div class="form-group">
-                                <label style="font-weight:bold;" class="control-label" for="pwd">Sender/Receiver Email: &nbsp;&nbsp;</label>
-                                <div class="col-sm-12">          
-                                    <input style="width:50%;" type="email" class="form-control" id="pwd" placeholder="Sender/Receiver Email" name="email" required="" autocomplete="off">
+                                <div class="form-group">
+                                    <label  style="font-weight:bold;margin-left:25%;" class="control-label" for="email">Ending Date Time: &nbsp;&nbsp;</label> 
+                                    <div class="col-sm-12">
+                                        <div id="datetimepicker1" class="input-append date">
+                                            <input style="width:50%;margin-left:25%;" type="text" class="form-control" name="date2" placeholder="Ending Date Time"></input>
+                                            <span class="add-on">
+                                                <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                                            </span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <br>
+                                <br>
 
-                            <div class="form-group">
-                                <div class="col-md-12"> 
-                                    <button type="submit" class="btn btn-success"><i class="fa fa-search-plus"></i> Search</button>
+                                <div class="form-group">
+                                    <label style="font-weight:bold;margin-left:25%;" class="control-label" for="pwd">Sender/Receiver Email: &nbsp;&nbsp;</label>
+                                    <div class="col-sm-12">          
+                                        <input style="width:50%;margin-left:25%;" type="email" class="form-control" id="pwd" placeholder="Sender/Receiver Email" name="email">
+                                        <input type="hidden" name="user_id" value="<?php echo $this->session->userdata('user_id') ?>"> 
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
+                                <br>
+
+                                <div class="form-group">
+                                    <div class="col-md-12"> 
+                                        <button type="submit" style="margin-left:25%;" class="btn btn-success"><i class="fa fa-search-plus"></i> Search</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!--<div class="col-md-2"></div>-->
                     </div>
-                    <!--<div class="col-md-2"></div>-->
                 </div>
             </div>
-        </div>
         </div>
 
         <?php
@@ -115,6 +129,12 @@
         <script type="text/javascript" src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js"></script>
         <script type="text/javascript">
             $('#datetimepicker').datetimepicker({
+//                format: 'dd/MM/yyyy hh:mm:ss',
+                format: 'yyyy-MM-dd hh:mm:ss',
+                language: 'en'
+            });
+
+            $('#datetimepicker1').datetimepicker({
 //                format: 'dd/MM/yyyy hh:mm:ss',
                 format: 'yyyy-MM-dd hh:mm:ss',
                 language: 'en'

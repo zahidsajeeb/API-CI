@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2018 at 11:59 AM
+-- Generation Time: May 10, 2018 at 01:43 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -25,6 +25,34 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `mail`
+--
+
+CREATE TABLE `mail` (
+  `id` int(11) NOT NULL,
+  `subject` text NOT NULL,
+  `body` text NOT NULL,
+  `sender_email` varchar(100) NOT NULL,
+  `receiver_email` varchar(100) NOT NULL,
+  `auth_key` varchar(255) NOT NULL,
+  `user_id` int(10) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `datetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `status` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mail`
+--
+
+INSERT INTO `mail` (`id`, `subject`, `body`, `sender_email`, `receiver_email`, `auth_key`, `user_id`, `username`, `datetime`, `status`) VALUES
+(76, 'bgtgttgrr', 'hi this is alex', 'php@yahoo.com', 'zahidsajeeb100@gmail.com', '123456', 2, 'Mohammad Zahidul Islam', '2018-05-10 05:29:18', ''),
+(77, 'bgtgttgrr', 'hi this is alex', 'php@yahoo.com', 'zahidsajeeb100@gmail.com', '123456', 1, 'Mohammad Samad', '2018-05-10 05:29:35', ''),
+(78, 'bgtgttgrr', 'hi this is alex', 'php@yahoo.com', 'zahidsajeeb100@gmail.com', '123456', 2, 'Mohammad Zahidul Islam', '2018-05-10 05:56:03', '');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `token`
 --
 
@@ -39,51 +67,8 @@ CREATE TABLE `token` (
 --
 
 INSERT INTO `token` (`token_id`, `token`, `user_id`) VALUES
-(18, '41cb3375b4fd34e55734d70670f97e8c', 1),
-(19, '6020d31f7d3e0bf67fd189ef95d2597a', 2);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user`
---
-
-CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
-  `subject` text NOT NULL,
-  `body` text NOT NULL,
-  `sender_email` varchar(100) NOT NULL,
-  `receiver_email` varchar(100) NOT NULL,
-  `auth_key` varchar(255) NOT NULL,
-  `user_id` int(10) NOT NULL,
-  `datetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`id`, `subject`, `body`, `sender_email`, `receiver_email`, `auth_key`, `user_id`, `datetime`) VALUES
-(46, 'Sam-Solutions', 'Hi,This Is alex !', 'phpexpart007@gmail.com', 'zahidsajeeb100@gmail.com', '', 1, '2018-05-06 18:37:14'),
-(47, 'phpmailer', 'Hi this is alex', 'php@gmail.com', 'zahidsajeeb100@gmail.com', '123456', 1, '2018-05-06 18:37:14'),
-(48, 'hghgh', 'Hi this is alex', '', 'zahidsajeeb100@gmail.com', '123456', 1, '2018-05-06 18:37:14'),
-(49, 'hi', 'hi this is alex', 'php@yahoo.com', 'zahidsajeeb100@gmail.com', '123456', 1, '2018-05-06 18:37:14'),
-(50, 'hi', 'hi this is alex', 'php@yahoo.com', 'php@email.com', '123456', 1, '2018-05-06 18:37:14'),
-(51, 'hi', 'hi this is alex', 'php@yahoo.com', 'php@email.com', '123456', 1, '2018-05-06 18:37:14'),
-(52, 'hi', 'hi this is alex', 'php@yahoo.com', 'php@email.com', '123456', 1, '2018-05-06 18:37:14'),
-(53, 'hi', 'hi this is alex', 'php@yahoo.com', 'php@email.com', '123456', 1, '2018-05-06 18:37:14'),
-(54, 'hi', 'hi this is alex', 'php@yahoo.com', 'php@email.com', '123456', 1, '2018-05-06 18:37:14'),
-(55, 'hi', 'hi this is alex', 'php@yahoo.com', 'php@email.com', '123456', 1, '2018-05-06 18:37:14'),
-(56, 'hi', 'hi this is alex', 'php@yahoo.com', 'php@email.com', '123456', 1, '2018-05-06 18:37:14'),
-(57, 'hi', 'hi this is alex', 'php@yahoo.com', 'php@email.com', '123456', 1, '2018-05-06 18:37:14'),
-(58, 'hi', 'hi this is alex', 'php@yahoo.com', 'php@email.com', '123456', 1, '2018-05-06 18:37:14'),
-(59, 'hi', 'hi this is alex', 'php@yahoo.com', 'php@email.com', '123456', 1, '2018-05-06 18:37:17'),
-(60, 'hi', 'hi this is alex', 'php@yahoo.com', 'zahidsajeeb100@gmail.com', '123456', 1, '2018-05-07 12:02:51'),
-(61, 'hi', 'hi this is alex', 'php@yahoo.com', 'zahidsajeeb100@gmail.com', '123456', 2, '2018-05-07 12:09:05'),
-(62, 'hi', 'hi this is alex', 'php@yahoo.com', 'zahidsajeeb100@gmail.com', '123456', 2, '2018-05-08 09:33:29'),
-(63, 'hi', 'hi this is alex', '', 'zahidsajeeb100@gmail.com', '123456', 2, '2018-05-08 09:34:46'),
-(64, 'hi', 'hi this is alex', '', 'zahidsajeeb100@gmail.com', '123456', 2, '2018-05-08 09:35:29'),
-(65, 'hi', 'hi this is alex', '', 'zahidsajeeb100@gmail.com', '123456', 2, '2018-05-08 09:37:13');
+(19, '6020d31f7d3e0bf67fd189ef95d2597a', 2),
+(21, 'de94c5ccf4b0f486f2ac50a66376aab8', 1);
 
 -- --------------------------------------------------------
 
@@ -112,16 +97,16 @@ INSERT INTO `user_login` (`user_id`, `username`, `password`, `status`) VALUES
 --
 
 --
+-- Indexes for table `mail`
+--
+ALTER TABLE `mail`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `token`
 --
 ALTER TABLE `token`
   ADD PRIMARY KEY (`token_id`);
-
---
--- Indexes for table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `user_login`
@@ -134,16 +119,16 @@ ALTER TABLE `user_login`
 --
 
 --
+-- AUTO_INCREMENT for table `mail`
+--
+ALTER TABLE `mail`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+
+--
 -- AUTO_INCREMENT for table `token`
 --
 ALTER TABLE `token`
-  MODIFY `token_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
-
---
--- AUTO_INCREMENT for table `user`
---
-ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+  MODIFY `token_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `user_login`

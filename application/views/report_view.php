@@ -29,6 +29,7 @@
                                     <th>Subject</th>
                                     <th>Body</th>
                                     <th>DateTime</th>
+                                    <th>UserID</th>
                                 </tr>
                             </thead>
                             <?php if ($result == TRUE) { ?>
@@ -42,6 +43,7 @@
                                             <td><?php echo $row->subject; ?></td>
                                             <td><?php echo $row->body; ?></td>
                                             <td><?php echo $row->datetime; ?></td>
+                                            <td><?php echo $row->user_id; ?></td>
                                         </tr>
                                     <?php endforeach; ?>
                                 </tbody>
