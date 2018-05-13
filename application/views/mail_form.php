@@ -19,11 +19,11 @@
                     <!--<div class="col-md-2"></div>-->
                     <div class="col-md-12">
                         <h2>Send Email</h2>
-                        <form action="<?php echo base_url() ?>Send_email/mail_send" method="post" id="personID" onsubmit="return ValidateForm();">
-
+                        <form action="<?php echo base_url() ?>Send_email/mail_send" method="post" id="personID">
+<!--onsubmit="return ValidateForm();"-->
                             <div class="form-group">
                                 <label for="email">Sender Email:</label>
-                                <input type="email" class="form-control"  id="email" placeholder="Enter Receiver Email" name="sender_email">      
+                                <input type="email" class="form-control"  id="email" placeholder="Enter Sender Email" name="sender_email">      
                                 <span class="error_msg" style="color:red;"></span><br>
 
                                 <input type="hidden"  name="user_id" value="<?php   echo $this->session->userdata('user_id'); ?>">

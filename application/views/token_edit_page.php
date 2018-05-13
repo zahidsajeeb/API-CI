@@ -35,6 +35,8 @@
                                 <input type="hidden" name="token_id" value="<?php echo $result->token_id; ?>">
                             </div>
                             <button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> Submit</button>
+                            <!--<a href="<?php echo base_url(); ?>Token/index">Cancel</a>-->
+                            <a href="<?php echo base_url(); ?>Token/index" class="btn btn-danger"><i class="fa fa-backward"></i> Cancel</a>
                         </form>
                     </div>
                     <!--<div class="col-md-2"></div>-->

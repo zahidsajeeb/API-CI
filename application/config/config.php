@@ -25,6 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $config['base_url'] = 'http://localhost/code/';
 
+
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -36,6 +37,8 @@ $config['base_url'] = 'http://localhost/code/';
 |
 */
 $config['index_page'] = 'index.php';
+
+
 
 /*
 |--------------------------------------------------------------------------

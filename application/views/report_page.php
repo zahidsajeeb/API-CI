@@ -19,7 +19,7 @@
                 position: fixed;
                 top: 0;
                 width: 100%;
-                border-radius: 0;
+                border-radius:0px;
             }
 
             .navbar a {
@@ -120,7 +120,7 @@
         </div>
 
         <?php
-        if (isset($footer)) {
+        if (isset($footer)){
             echo $footer;
         };
         ?>
@@ -129,13 +129,13 @@
         <script type="text/javascript" src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.pt-BR.js"></script>
         <script type="text/javascript">
             $('#datetimepicker').datetimepicker({
-//                format: 'dd/MM/yyyy hh:mm:ss',
+//               format: 'dd/MM/yyyy hh:mm:ss',
                 format: 'yyyy-MM-dd hh:mm:ss',
                 language: 'en'
             });
 
             $('#datetimepicker1').datetimepicker({
-//                format: 'dd/MM/yyyy hh:mm:ss',
+//              format: 'dd/MM/yyyy hh:mm:ss',
                 format: 'yyyy-MM-dd hh:mm:ss',
                 language: 'en'
             });

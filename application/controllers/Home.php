@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class home extends CI_Controller {
+class Home extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
@@ -13,7 +13,7 @@ class home extends CI_Controller {
         $this->load->helper('url');
     }
 
-    public function user_index() {
+    public function user_index(){
         $data['header'] = $this->load->view('header', '', true);
         $data['menu'] = $this->load->view('menu', '', true);
         $data['footer'] = $this->load->view('footer', '', true);

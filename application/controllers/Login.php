@@ -56,7 +56,7 @@ class Login extends CI_Controller {
                 {
             $meg['message'] = "User Id Or password Invalide! OR Your not Register Member";
             $this->session->set_userdata($meg);
-            redirect("login/user_login");
+            redirect("login/index");
         }
     }
 
